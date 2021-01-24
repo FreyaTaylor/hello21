@@ -33,15 +33,6 @@ while ischar(tline)
         size(str);%1×4 cell 数组
         task_id=[task_id;str{2}]; %cell 数组，列拼接
     end
-    
-    if ~isempty(strfind(tline,'ARC'))%找到第一行ARC数据
-        str=tline;
-        str=strtrim(str);
-        str= regexp(str, '\s+', 'split');
-        arc_id=   [arc_id;str{2}];
-        arc_from= [arc_from;str{4}];
-        arc_to=   [arc_to;str{6}];
-    end
 
     if ~isempty(strfind(tline,'}'))%TASK_GRAPH结束
         break;
